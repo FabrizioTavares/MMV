@@ -8,7 +8,15 @@ Parameter(s):
 	None
 */
 
-_handleGroupsIndex = addMissionEventHandler ["EntityCreated", {
+private _exists = missionNamespace getVariable "mmvHandleGroupsIndex";
+	
+if (!(isNil "_exists")) exitWith {
+	if (FABHH_mmv_debugMessages) then {
+		systemChat "[ i ] Magic Mag Vehicles (HandleNewGroups): already present, exiting";
+	}
+};
+
+private _handleGroupsIndex = addMissionEventHandler ["EntityCreated", {
 
 	params ["_unit"];
 	
@@ -21,4 +29,6 @@ _handleGroupsIndex = addMissionEventHandler ["EntityCreated", {
 	};
 	
 }];
+
+missionNamespace setVariable ["mmvHandleGroupsIndex", _handleGroupsIndex];
 	

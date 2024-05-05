@@ -393,8 +393,8 @@ Possible improments: Replace Side with Faction.
 [
     "FABHH_mmv_DLReloadMultiplier",
     "SLIDER",
-    ["Weapon Reload Multiplier", "Multiplies the 'reloadTime' CfgWeapon value by this number. use this to stop weapons from reloading instantly on Dynamic Loadout Vehicles."],
-    ["Magic Mag - Vehicles", "Dynamic Loadouts - Cooldowns"],
+    ["Pylon Multiplier", "Multiplies the 'reloadTime' CfgWeapon value by this number. use this to stop pylons from reloading instantly on Dynamic Loadout Vehicles. Default value recommended."],
+    ["Magic Mag - Vehicles", "Dynamic Loadouts - Options"],
     [1, 1000, 100, 0],
     true
 ] call CBA_fnc_addSetting;
