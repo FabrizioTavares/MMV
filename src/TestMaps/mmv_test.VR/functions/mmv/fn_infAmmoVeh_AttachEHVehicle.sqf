@@ -23,7 +23,7 @@ if (_isDLv) then {
 
 	_vehicle setVariable ["mmvBusyPylons", [], true]; // array to keep track of pylons that are reloading
 	_vehicle setVariable ["mmvPylonCount", count (getAllPylonsInfo _vehicle), true];
-	_vehicle setVariable ["mmvNormalWeapons", [], true];
+	_vehicle setVariable ["mmvNormalWeapons", ["CMFlareLauncher"], true]; // start with cm launcher as 'weapons' wont return it
 	
 	{ // gather information of all non-pylon weapons in a vehicle
 		if(!("Pylon" in str(getArray (configFile >> "CfgWeapons" >> _x >> "magazines")))) then {
@@ -49,12 +49,12 @@ if (_isDLv) then {
 			} forEach getAllPylonsInfo _thisvehicle;	
 			
 		} else {
-			if (_gunner ammo _muzzle == 0) then {
+			if (_thisvehicle magazineTurretAmmo [_magazine, _thisvehicle unitTurret _gunner] == 0) then {
 				_currentTurretPath = _thisvehicle unitTurret _gunner;
 				_thisvehicle removeMagazineTurret [_magazine, _currentTurretPath];
 				_thisvehicle addMagazineTurret [_magazine, _currentTurretPath];
 				_thisvehicle loadMagazine [_currentTurretPath, _weapon, _magazine];
-			}
+			};
 		};
 		
 		/* Old implementation as follows, for reference
