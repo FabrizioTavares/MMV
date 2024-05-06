@@ -15,7 +15,12 @@ private _unit = param[0];
 
 private _allowed = false;
 
-if ((str (side _unit) in FABHH_mmv_Sides) or ((isPlayer _unit) and FABHH_mmv_Players)) then {
+if ((str (side _unit) in FABHH_mmv_Sides) and !(isPlayer _unit)) exitWith { // for AI
+	_allowed = true;
+	_allowed;
+};
+
+if ((isPlayer _unit) and FABHH_mmv_Players) exitWith { // for players
 	_allowed = true;
 	_allowed;
 };
