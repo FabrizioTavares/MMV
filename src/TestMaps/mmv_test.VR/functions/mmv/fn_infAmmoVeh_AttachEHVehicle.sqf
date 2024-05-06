@@ -49,12 +49,14 @@ if (_isDLv) then {
 			} forEach getAllPylonsInfo _thisvehicle;	
 			
 		} else {
+		
 			if (_thisvehicle magazineTurretAmmo [_magazine, _thisvehicle unitTurret _gunner] == 0) then {
 				_currentTurretPath = _thisvehicle unitTurret _gunner;
 				_thisvehicle removeMagazineTurret [_magazine, _currentTurretPath];
 				_thisvehicle addMagazineTurret [_magazine, _currentTurretPath];
 				_thisvehicle loadMagazine [_currentTurretPath, _weapon, _magazine];
 			};
+			
 		};
 		
 		/* Old implementation as follows, for reference
@@ -95,9 +97,16 @@ if (_isDLv) then {
 	_mmvEHIndex = _vehicle addEventHandler ["Fired", {
 
 		params ["_thisvehicle", "_weapon", "_muzzle", "_mode", "_ammo", "_magazine", "_projectile", "_gunner"];
+		
+		private _currentTurretPath = [-2];
+		
+		if (isManualFire _thisvehicle) then {
+			_currentTurretPath = [0]; //fixes most cases of issues with manual fire
+		} else {
+			_currentTurretPath = _thisvehicle unitTurret _gunner;
+		};
 	
-		if (_thisvehicle magazineTurretAmmo [_magazine, _thisvehicle unitTurret _gunner] == 0) then {
-			private _currentTurretPath = _thisvehicle unitTurret _gunner;
+		if (_thisvehicle magazineTurretAmmo [_magazine, _currentTurretPath] == 0) then {
 			_thisvehicle removeMagazineTurret [_magazine, _currentTurretPath];
 			_thisvehicle addMagazineTurret [_magazine, _currentTurretPath];
 			_thisvehicle loadMagazine [_currentTurretPath, _weapon, _magazine];

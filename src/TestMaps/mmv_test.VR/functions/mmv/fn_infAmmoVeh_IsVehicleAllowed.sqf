@@ -19,11 +19,7 @@ private _isAllowed = false;
 
 _category = getText (configFile >> "CfgVehicles" >> _class >> "editorSubcategory");
 
-{
-	if(_x in _category) exitWith{
-		_isAllowed = true;
-	}
-} forEach FABHH_mmv_AllowedVehicleClasses;
+_isAllowed = FABHH_mmv_AllowedVehicleClasses findIf {_x in _category} != -1;
 
 _displayName = getText (configFile >> "CfgVehicles" >> _class >> "displayName");
 
