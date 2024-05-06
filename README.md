@@ -1,5 +1,5 @@
 # Magic Mag - Vehicles: Infinite ammo with reloads
-
+![screenshot](src/MagicMagVeh/banner.png)
 ## Description
 Magic Mag - Vehicles is a mod for Arma 3 by Bohemia Interactive. This mod aims to reduce the overall micromanagement needed by AI. In this case, their vehicular ammunition. Players, if they so desire, can also use this mod in their favor.
 
@@ -23,7 +23,7 @@ Magic Mag - Vehicles is a mod for Arma 3 by Bohemia Interactive. This mod aims t
 3. You can customize the mod to your liking by altering its options in the addon configuration menu, accessible by the Escape Menu: Options -> Add-on Settings -> Magic Mag Vehicles.
 
 ## Limitations and known issues
-- Some weapons were never meant to be reloaded. Unfortunately, this is an issue this mod can not fix, but rather needs to be fixed by Bohemia Interactive or the other Mod authors. Attempting to reload a weapon that has reload time "0" will cause an instant reload, which may cause some balancing or difficulty issues.
+- Some weapons were never meant to be reloaded. Unfortunately, this is an issue this mod can not fix, but rather by Bohemia Interactive or the other Mod authors. Attempting to reload a weapon that has reload time "0" will cause an instant reload, which may cause some balancing or difficulty issues.
 
 ## Compatibility
 - Minimum game version: 2.16
