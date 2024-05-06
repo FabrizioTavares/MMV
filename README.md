@@ -24,6 +24,7 @@ Magic Mag - Vehicles is a mod for Arma 3 by Bohemia Interactive. This mod aims t
 
 ## Limitations and known issues
 - Some weapons were never meant to be reloaded. Unfortunately, this is an issue this mod can not fix, but rather by Bohemia Interactive or the other Mod authors. Attempting to reload a weapon that has reload time "0" will cause an instant reload, which may cause some balancing or difficulty issues.
+- Manual Fire support is limited and can fail to reload weapons when manual fire is in use.
 
 ## Compatibility
 - Minimum game version: 2.16
