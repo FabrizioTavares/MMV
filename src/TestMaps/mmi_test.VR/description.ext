@@ -1,0 +1,19 @@
+class CfgFunctions
+{
+	class FABHH
+	{
+		class mmi
+		{
+			file = "Functions";
+			class infAmmoInf_AttachEH {};
+			class infAmmoInf_DetachEH {};
+			class infAmmoInf_DelayedAddMagazine {};
+			class infAmmoInf_IsUnitAllowed {};
+			class infAmmoInf_GetClassReloadTime {};
+			class infAmmoInf_GetWeaponTypeFromClass {};
+			class infAmmoInf_GetWeaponTypeFromCursor {};
+			class infAmmoInf_GetWeaponType {};
+			class infAmmoInf_HandleNewGroups {PostInit = 1;};
+		};
+	};
+};
