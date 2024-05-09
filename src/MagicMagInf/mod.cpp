@@ -1,0 +1,14 @@
+name = "Magic Mag: inf";
+picture = "icon.paa";
+actionName = "Author";
+action = "http://www.steamcommunity.com/id/fab2";
+description = "Blesses chosen side(s) with unlimited ammo with reloads.";
+logo = "icon.paa";
+logoOver = "icon.paa";
+tooltip = "Magic Mag: Infantry";
+tooltipOwned = "you own this?";
+overview = "Customizeable infinite ammo mod with reloads that covers infantry. Non-stop firefights!";
+author = "Fab";
+overviewPicture = "icon.paa";
+overviewText = "Overviewtext";
+overviewFootnote = "";
