@@ -119,5 +119,5 @@ if (_isDLv) then {
 _vehicle setVariable ["mmvEHIndex", _mmvEHIndex, true];
 
 if (FABHH_mmv_debugMessages && (_mmvEHIndex != -1)) then {
-	systemChat "[ i ] Magic Mag Vehicles: Attached Event Handler to vehicle successfully";
+	systemChat format["[ i ] MMV: Attached Event Handler to vehicle %1 successfully", _vehicle];
 }

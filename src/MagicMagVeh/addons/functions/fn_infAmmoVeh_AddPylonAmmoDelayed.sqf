@@ -12,10 +12,15 @@ Parameter(s):
 
 private _vehicle = param[0];
 private _pylonIndex = param[1];
-private _Delay = param[2];
+private _delay = param[2];
 
 _vehicle setVariable ["mmvBusyPylons", ((_vehicle getVariable "mmvBusyPylons") + [_pylonIndex])];
 
-sleep _Delay;
+sleep _delay;
+
 _vehicle setVariable ["mmvBusyPylons", ((_vehicle getVariable "mmvBusyPylons") - [_pylonIndex])];
-_vehicle setAmmoOnPylon [_pylonIndex, 9000]; // pylon indexes start at 1
+
+if (_vehicle ammoOnPylon _pylonIndex == 0) then { // vehicle could have resupplied in the meanwhile
+	_vehicle setAmmoOnPylon [_pylonIndex, 9000]; // pylon indexes start at 1
+}
+	

@@ -12,7 +12,7 @@ private _exists = missionNamespace getVariable "mmvHandleGroupsIndex";
 	
 if (!(isNil "_exists")) exitWith {
 	if (FABHH_mmv_debugMessages) then {
-		systemChat "[ i ] Magic Mag Vehicles (HandleNewGroups): already present, exiting";
+		systemChat "[ i ] MMV (HandleNewGroups): already present, exiting";
 	}
 };
 

@@ -14,7 +14,7 @@ private _canRemove = _vehicle call FABHH_fnc_infAmmoVeh_CanRemoveVehicleEH;
 
 if (! _canRemove) exitWith{
 	if (FABHH_mmv_debugMessages) then {
-		systemChat (format ["[ i ] Magic Mag Vehicles (DetachEHVehicle): Fail, see above. Vehicle: vehicle %1", _vehicle]);
+		systemChat (format ["[ i ] MMV (DetachEHVehicle): Fail, see above. Vehicle: vehicle %1", _vehicle]);
 	};
 };
 
@@ -24,6 +24,6 @@ _vehicle removeEventHandler["Fired", _targetIndex];
 _vehicle setVariable ["mmvEHIndex", nil, true];
 
 if (FABHH_mmv_debugMessages) then {
-	systemChat (format ["[ i ] Magic Mag Vehicles (DetachEHVehicle): Removed Event Handler from vehicle %1 succesfully", _vehicle]);
+	systemChat (format ["[ i ] MMV (DetachEHVehicle): Removed Event Handler from vehicle %1 succesfully", _vehicle]);
 };
 
