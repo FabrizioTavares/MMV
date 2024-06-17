@@ -13,7 +13,7 @@ Returns(s):
 	
 Condition(s):
 	Vehicle must not already have Event Handler.
-	Vehicle must be in Allowed via the AllowedVehicleClasses array.
+	Vehicle must be Allowed via the AllowedVehicleClasses array.
 */
 
 private _vehicle = param[0];
@@ -23,7 +23,7 @@ private _targetIndex = _vehicle getVariable "mmvEHIndex";
 
 if (!(isNil "_targetIndex")) exitWith {
 	if (FABHH_mmv_debugMessages) then {
-		systemChat "[ i ] Magic Mag Vehicles (CanAttachVehicleEH): Vehicle already has Event Handler.";
+		systemChat "[ i ] MMV (CanAttachVehicleEH): Vehicle already has Event Handler.";
 	};
 	_canAttach;
 };
@@ -33,7 +33,8 @@ private _isAllowed = _vehicle call FABHH_fnc_infAmmoVeh_isVehicleAllowed;
 if (! _isAllowed) exitWith {
 	if (FABHH_mmv_debugMessages) then {
 		private _editorclass = getText (configFile >> "CfgVehicles" >> typeOf _vehicle >> "editorSubcategory");
-		systemChat format["[ i ] Magic Mag Vehicles (CanAttachVehicleEH): Vehicle class not allowed: %1", _editorclass];
+		systemChat format["[ i ] MMV (CanAttachVehicleEH): Vehicle class not allowed: %1", toUpper _editorclass];
+		systemChat format["[ i ] ^^^ : Add the above class to the compatibility setting if you wish."];
 	};
 	_canAttach;
 };

@@ -23,7 +23,7 @@ private _potentialVehicle = objectParent _infantry;
 
 if (!(isNil "_targetIndexIn") or !(isNil "_targetIndexOut") or !(isNil "_targetIndexDeath")) exitWith {
 	if (FABHH_mmv_debugMessages) then {
-		systemChat "[!!!] Magic Mag Vehicles (AttachEHUnit): Unit already has EHs - ignoring";
+		systemChat "[ i ] MMV (AttachEHUnit): Unit already has EHs - ignoring";
 	};
 };
 
@@ -69,7 +69,7 @@ if (!(isNull _potentialVehicle)) then {
 };
 
 if (FABHH_mmv_debugMessages) then {
-	systemChat (format ["[ i ] Magic Mag Vehicles (AttachEHUnit): Added Event Handlers to %1", _infantry]);
+	systemChat (format ["[ i ] MMV (AttachEHUnit): Added Event Handlers to %1", _infantry]);
 };
 
 

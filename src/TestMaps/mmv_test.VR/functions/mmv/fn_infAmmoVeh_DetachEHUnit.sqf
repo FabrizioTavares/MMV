@@ -20,13 +20,13 @@ private _potentialVehicle = objectParent _infantry;
 if ((isNil "_targetIndexIn") and (isNil "_targetIndexOut")) exitWith {
 	
 	if (FABHH_mmv_debugMessages) then {
-		systemChat "[ i ] Magic Mag Vehicles: Unit does not have Event Handlers - ignoring";
+		systemChat "[ i ] MMV: Unit does not have Event Handlers - ignoring";
 	};
 	
 };
 
 if (FABHH_mmv_debugMessages) then {
-	systemChat (format["[ i ] Magic Mag Vehicles: Removing Event Handlers from unit %1", _infantry]);
+	systemChat (format["[ i ] MMV: Removing Event Handlers from unit %1", _infantry]);
 };
 
 _infantry removeEventHandler["GetInMan", _targetIndexIn];

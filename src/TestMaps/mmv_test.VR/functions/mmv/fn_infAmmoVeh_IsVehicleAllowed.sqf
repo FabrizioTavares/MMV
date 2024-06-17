@@ -13,17 +13,22 @@ Returns(s):
 */
 
 private _vehicle = param[0];
-
-private _class = typeOf _vehicle;
 private _isAllowed = false;
 
-_category = getText (configFile >> "CfgVehicles" >> _class >> "editorSubcategory");
+if (FABHH_mmv_bypassClasses) exitWith {
+	_isAllowed = true;
+	_isAllowed
+};
+
+private _class = typeOf _vehicle;
+
+_category = toLower (getText (configFile >> "CfgVehicles" >> _class >> "editorSubcategory"));
 
 _isAllowed = FABHH_mmv_AllowedVehicleClasses findIf {_x in _category} != -1;
 
-_displayName = getText (configFile >> "CfgVehicles" >> _class >> "displayName");
+if (_isAllowed) exitWith {_isAllowed;};
 
-if ((_displayName in FABHH_mmv_compatibility)) then {
+if ((FABHH_mmv_useCompatibility) and {(_category in FABHH_mmv_compatibility)}) then {
 	_isAllowed = true;
 };
 

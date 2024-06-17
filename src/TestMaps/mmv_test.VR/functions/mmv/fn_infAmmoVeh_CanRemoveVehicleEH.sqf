@@ -23,7 +23,7 @@ private _canRemove = true;
 
 if (isNil "_targetIndex") exitWith {
 	if (FABHH_mmv_debugMessages) then {
-		systemChat "[ i ] Magic Mag Vehicles (CanRemoveVehicleEH): No event handler in this vehicle to check for removal!";
+		systemChat "[ i ] MMV (CanRemoveVehicleEH): No event handler in this vehicle to check for removal!";
 		_canRemove = false;
 		_canRemove;
 	}
@@ -34,7 +34,7 @@ private _allowedVehicle = _vehicle call FABHH_fnc_infAmmoVeh_isVehicleAllowed;
 if (!_allowedVehicle) exitWith{
 	// this vehicle's class left the allowed vehicle classes, allow removal independent of crew.
 	if (FABHH_mmv_debugMessages) then {
-		systemChat "[ i ] Magic Mag Vehicles (CanRemoveVehicleEH): Unallowed vehicle has event handler. Allowing removal.";
+		systemChat "[ i ] MMV (CanRemoveVehicleEH): Unallowed vehicle has event handler. Allowing removal.";
 	};
 	_canRemove = true;
 	_canRemove;
@@ -44,14 +44,14 @@ if (!_allowedVehicle) exitWith{
 {
 	if (str (side _x) in (FABHH_mmv_Sides) and !(isPlayer _x)) exitWith{
 		if (FABHH_mmv_debugMessages) then {
-			systemChat "[ i ] Magic Mag Vehicles (CanRemoveVehicleEH): Can't remove EH from vehicle due to allowed AI units inside";
+			systemChat "[ i ] MMV (CanRemoveVehicleEH): Can't remove EH from vehicle due to allowed AI units inside";
 		};
 		_canRemove = false;
 		_canRemove;
 	};
 	if ((isPlayer _x) and FABHH_mmv_Players) exitWith {
 		if (FABHH_mmv_debugMessages) then {
-			systemChat "[ i ] Magic Mag Vehicles (CanRemoveVehicleEH): Can't remove EH from vehicle due to allowed players inside";
+			systemChat "[ i ] MMV (CanRemoveVehicleEH): Can't remove EH from vehicle due to allowed players inside";
 		};
 		_canRemove = false;
 		_canRemove;
